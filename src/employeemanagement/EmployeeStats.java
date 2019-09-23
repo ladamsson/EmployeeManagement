@@ -30,13 +30,69 @@ public class EmployeeStats {
         }
         return (Math.round(totSal / employeeList.size()));
     }
-    
-    
 
- 
+    public void printAverageSalaryWithinProfessions() {
+        double amountOfShareHolders = 0;
+        double shareHoldersSalary = 0;
+        double amountOfFulltimes = 0;
+        double fullTimesSalary = 0;
+        double amountOfContractors = 0;
+        double contractorsSalary = 0;
+
+        for (Employee employee : employeeList) {
+            if (employee instanceof ShareHolderEmployee) {
+                shareHoldersSalary += employee.getSalary();
+                amountOfShareHolders++;
+
+            } else if (employee instanceof FullTimeEmployee) {
+                fullTimesSalary += employee.getSalary();
+                amountOfFulltimes++;
+            } else if (employee instanceof ContractorEmployee) {
+                contractorsSalary += employee.getSalary();
+                amountOfContractors++;
+
+            }
+
+        }
+        System.out.println("Average salary within professions:");
+        System.out.println("Shareholding employees' average salary: $" + (Math.round(shareHoldersSalary / amountOfShareHolders)));
+        System.out.println("Fulltime empoyees' average salary: $" + (Math.round(fullTimesSalary / amountOfFulltimes)));
+        System.out.println("Contractor employees' average salary: $" + (Math.round(contractorsSalary / amountOfContractors)));
+
+    }
+
+    public void printAverageSalaryBetweenGenders() {
+        double amountOfUnknowns = 0;
+        double amountOfMales = 0;
+        double amountOfFemales = 0;
+        double unknownsSalary = 0;
+        double malesSalary = 0;
+        double femalesSalary = 0;
+
+        for (Employee employee : employeeList) {
+            if (employee.getGender() == Gender.UNKNOWN) {
+                unknownsSalary += employee.getSalary();
+                amountOfUnknowns++;
+
+            } else if (employee.getGender() == Gender.MALE) {
+                malesSalary += employee.getSalary();
+                amountOfMales++;
+            } else if (employee.getGender() == Gender.FEMALE) {
+                femalesSalary += employee.getSalary();
+                amountOfFemales++;
+
+            }
+        }
+        System.out.println("Average salary between genders:");
+        System.out.println("Males' average salary: $" + (Math.round(malesSalary/amountOfMales)));
+        System.out.println("Females' average salary: $" + (Math.round(femalesSalary/amountOfFemales)));
+        System.out.println("Unknowns' average salary: $" + (Math.round(unknownsSalary/amountOfUnknowns)));
+    }
+
     public int getAverageAgeOfEmployees() {
         int totAge = 0;
         int averageAge = 0;
+        
         for (Employee employee : employeeList) {
             totAge += employee.getAge();
 
@@ -74,30 +130,30 @@ public class EmployeeStats {
         }
 
     }
-    
-    public void printEmployeesWithHighestAndLowestSalary(){
-        
+
+    public void printEmployeesWithHighestAndLowestSalary() {
+
         double max = 0;
         Employee maxEmp = null;
         Employee minEmp = null;
         for (Employee employee : employeeList) {
-            if(employee.getSalary()>max){
+            if (employee.getSalary() > max) {
                 max = employee.getSalary();
                 maxEmp = employee;
             }
         }
         double min = max;
         for (Employee employee : employeeList) {
-            if(employee.getSalary()<min){
+            if (employee.getSalary() < min) {
                 min = employee.getSalary();
                 minEmp = employee;
             }
         }
-            System.out.println("Employee with lowest salary is:");
-            System.out.println(minEmp);
-            System.out.println("Employee with highest salary is:");
-            System.out.println(maxEmp);
-        
+        System.out.println("Employee with lowest salary is:");
+        System.out.println(minEmp);
+        System.out.println("Employee with highest salary is:");
+        System.out.println(maxEmp);
+
     }
 
     public void printGenderRatioWithinProfessions() {
@@ -145,7 +201,6 @@ public class EmployeeStats {
 
             }
         }
-        
 
         System.out.println("Shareholder gender ratio:");
         System.out.println("Males: " + (Math.round((shareHolderMales / shareHolderList.size()) * 100)) + "%");
