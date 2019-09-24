@@ -1,6 +1,7 @@
 package employeemanagement;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -34,6 +35,7 @@ public class Menu {
                     if (isListLoaded == false) {
                         empMan.loadList();
                         isListLoaded = true;
+                        Collections.sort(EmployeeManager.employeeList);
                     } else {
                         System.out.println("\nSorry, list can only be loaded once.\n");
                     }
@@ -71,8 +73,8 @@ public class Menu {
             }
             TimeUnit.SECONDS.sleep((long) 1.5);
         } while (loopMenu);
-        System.out.println("Beep, boop, beep...");
-        System.out.println("I was just learning to love...");
+        System.out.println("\nBeep, boop, beep...");
+        System.out.println("I... was... just learning to love...");
         System.out.println("Goodbye humans <(x_x)>");
     }
 

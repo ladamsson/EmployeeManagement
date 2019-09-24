@@ -3,8 +3,10 @@ package employeemanagement;
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.function.Predicate;
-
+import java.util.Comparator;
 public class EmployeeManager {
 
     static Scanner sc = new Scanner(System.in);
@@ -50,7 +52,8 @@ public class EmployeeManager {
         employeeList.add(emp7);
         employeeList.add(emp8);
         employeeList.add(new ShareHolderEmployee(17200, "Uffe B", Gender.MALE, "1955-04-08"));
-
+        
+       
         System.out.println("Loaded a list of " + employeeList.size() + " employees.\n");
 
     }
@@ -218,6 +221,7 @@ public class EmployeeManager {
                         + "\n" + name + ", " + salary + ", " + socialSecurityN);
             }
         }
+           Collections.sort(employeeList);
 
     }
 
@@ -284,6 +288,7 @@ public class EmployeeManager {
                     System.out.println("No updates were made");
             }
         }
+        Collections.sort(employeeList);
     }
 
     public void removeEmployee() {
@@ -298,6 +303,6 @@ public class EmployeeManager {
             }
         }
         employeeList.remove(empRemove);
+        Collections.sort(employeeList);
     }
-
 }

@@ -22,6 +22,7 @@ public class ContractorEmployee extends Employee {
     public double getUnUsedVacationDaysAllowance() {
         return getSalary()*0;
     }
+
     
     
     

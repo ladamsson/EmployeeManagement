@@ -34,4 +34,5 @@ public class ShareHolderEmployee extends Employee {
         return getSalary()*0.12;
     }
     
+    
 }
