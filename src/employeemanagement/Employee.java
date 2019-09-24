@@ -60,12 +60,12 @@ public abstract class Employee implements Comparable<Employee>{
     }
     
     public String getFirstName(){
-        String[] x = name.split(" ");
+        String[] x = name.split(" "); //creates an array of 2 Strings (firstname and surname, split by " ") and returns firstname
         return x[0];
     }
 
     public String getSurname(){
-        String[] x = name.split(" ");
+        String[] x = name.split(" "); //creates an array of 2 Strings (firstname and surname, split by " ") and returns surname
         return x[1];
     }
     public int getEmployeeID() {
@@ -82,14 +82,14 @@ public abstract class Employee implements Comparable<Employee>{
     }
     
     public int getAge(){
-        LocalDate birthDate = LocalDate.parse(socialSecurityN);
-        long employeeAge = YEARS.between(birthDate, LocalDate.now());
-        return(int)employeeAge; //castar long till int
+        LocalDate birthDate = LocalDate.parse(socialSecurityN); //parses socialsecurity String to a LocalDate
+        long employeeAge = YEARS.between(birthDate, LocalDate.now()); //calculates employees age
+        return(int)employeeAge; //casts long to int
     }
     
-    public abstract double getTotalMonthlyIncome();
+    public abstract double getTotalMonthlyIncome();//calculates total income(salary, benefits, vacation pay etc)
     
-    public abstract double getUnUsedVacationDaysAllowance();
+    public abstract double getUnUsedVacationDaysAllowance(); //abstract method only used for 2/3 subclasses
     
      @Override
     public int compareTo(Employee o) {
@@ -102,11 +102,11 @@ public abstract class Employee implements Comparable<Employee>{
 
     @Override
     public String toString() {
-         if(endDate == null){
+         if(endDate == null){ //if employee has not left company and endDate is not set this toString is used
              return "ID " + employeeID + "/" + getSurname() +", " + getFirstName()  + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
                 + ". Joined company in " + startDate;
         }
-         else{
+         else{ // If employee has left company and endDate is set this toString is used with endDate included.
              return "ID " + employeeID + "/" +getSurname() +", " + getFirstName()  + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
                 + ". Joined company in " + startDate + ", left company in " + endDate;
          }

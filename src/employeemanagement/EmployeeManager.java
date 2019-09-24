@@ -63,7 +63,7 @@ public class EmployeeManager {
     }
 
     public void printList() {
-        if (employeeList.size() != 0) {
+        if (employeeList.size() != 0) { //code runs if list is not empty
             for (Employee employee : employeeList) {
                 System.out.println(employee);
                 System.out.println("");
@@ -74,10 +74,10 @@ public class EmployeeManager {
     }
 
     public void printListOfFemales() {
-        if (employeeList.size() != 0) {
+        if (employeeList.size() != 0) { //code runs if list is not empty
             for (Employee employee : employeeList) {
-                if (employee.getGender() == Gender.FEMALE) {
-                    System.out.println(employee);
+                if (employee.getGender() == Gender.FEMALE) { 
+                    System.out.println(employee); //prints all females
                     System.out.println("");
                 }
 
@@ -89,13 +89,13 @@ public class EmployeeManager {
     }
 
     public void printListOfShareHolders() {
-        ArrayList<Employee> shareHolderList = new ArrayList<>();
+        ArrayList<Employee> shareHolderList = new ArrayList<>(); //creates new arraylist and adds all shareholders to list
         for (Employee employee : employeeList) {
             if (employee instanceof ShareHolderEmployee) {
                 shareHolderList.add(employee);
             }
         }
-        if (shareHolderList.size() != 0) {
+        if (shareHolderList.size() != 0) { //code runs if list is not empty
             System.out.println("List of share holders:");
             for (Employee employee : shareHolderList) {
                 System.out.println(employee);
@@ -106,13 +106,13 @@ public class EmployeeManager {
     }
 
     public void printListOfFullTimeEmployees() {
-        ArrayList<Employee> fullTimeList = new ArrayList<>();
+        ArrayList<Employee> fullTimeList = new ArrayList<>();  //creates new arraylist and adds all shareholders to list
         for (Employee employee : employeeList) {
             if (employee instanceof FullTimeEmployee) {
                 fullTimeList.add(employee);
             }
         }
-        if (fullTimeList.size() != 0) {
+        if (fullTimeList.size() != 0) { //code runs if list is not empty
             System.out.println("Full time employees:");
             for (Employee employee : fullTimeList) {
                 System.out.println(employee);
@@ -123,13 +123,13 @@ public class EmployeeManager {
     }
 
     public void printListOfContractors() {
-        ArrayList<Employee> contractorList = new ArrayList<>();
+        ArrayList<Employee> contractorList = new ArrayList<>();  //creates new arraylist and adds all shareholders to list
         for (Employee employee : employeeList) {
             if (employee instanceof ContractorEmployee) {
                 contractorList.add(employee);
             }
         }
-        if (contractorList.size() != 0) {
+        if (contractorList.size() != 0) { // code runs if list is not empty
             System.out.println("Contractor employees:");
             for (Employee employee : contractorList) {
                 System.out.println(employee);
@@ -140,10 +140,10 @@ public class EmployeeManager {
     }
 
     public void printListOfMales() {
-        if (employeeList.size() != 0) {
+        if (employeeList.size() != 0) { //code runs if list is not empty
             for (Employee employee : employeeList) {
-                if (employee.getGender() == Gender.MALE) {
-                    System.out.println(employee);
+                if (employee.getGender() == Gender.MALE) { 
+                    System.out.println(employee);//prints all males
                     System.out.println("");
                 }
 
@@ -176,10 +176,11 @@ public class EmployeeManager {
             System.out.println("\nEnter the employees social security number");
             System.out.println("Format: YYYYMMDDNNNN, Example: 199510104414.");
             socialSecurityN = sc.nextLine();
-        } while (socialSecurityN.length() != 12);
+        } while (socialSecurityN.length() != 12); //doesn't allow user to write less or more than 12 chars
 
         socialSecurityN = socialSecurityN.substring(0, 4) + "-" + socialSecurityN.substring(4, 6) + "-"
-                + socialSecurityN.substring(6, 8);
+                + socialSecurityN.substring(6, 8); //changes the string to a LocalDate format manually
+        // ("YYYY-MM-DD)
 
         System.out.println("\nIn what capacity is the new employee being employed?");
         int capacity = 0;
@@ -236,7 +237,7 @@ public class EmployeeManager {
             }
         }
 
-        if (updateEmp != null) {
+        if (updateEmp != null) { //if id is found/matched
             System.out.println("What do you want to update?");
             System.out.println("1: Employee has left the company");
             System.out.println("2: Update the employees salary");
