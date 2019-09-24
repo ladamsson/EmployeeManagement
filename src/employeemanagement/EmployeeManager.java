@@ -39,7 +39,7 @@ public class EmployeeManager {
         ShareHolderEmployee emp4 = new ShareHolderEmployee(7700, "Jessica Pearson", Gender.FEMALE, "1965-01-12");
         ContractorEmployee emp5 = new ContractorEmployee(5400, "Builder Bob", Gender.MALE, "1970-05-12");
         ShareHolderEmployee emp6 = new ShareHolderEmployee(15400, "Britt-Erik Svenssondotter", Gender.UNKNOWN, "1955-03-12");
-        FullTimeEmployee emp7 = new FullTimeEmployee(5400, "Marat Matourin", Gender.MALE, "1994-12-04");
+        FullTimeEmployee emp7 = new FullTimeEmployee(5400, "Marat Matourin", Gender.MALE, "1991-12-04");
         ContractorEmployee emp8 = new ContractorEmployee(20120, "Caspar Sylwan", Gender.MALE, "1979-04-12");
 
         employeeList.add(emp);
@@ -221,7 +221,7 @@ public class EmployeeManager {
                         + "\n" + name + ", " + salary + ", " + socialSecurityN);
             }
         }
-           Collections.sort(employeeList);
+           Collections.sort(employeeList); //sorts by surname
 
     }
 
@@ -288,7 +288,7 @@ public class EmployeeManager {
                     System.out.println("No updates were made");
             }
         }
-        Collections.sort(employeeList);
+        Collections.sort(employeeList); //sorts by surname
     }
 
     public void removeEmployee() {
@@ -303,6 +303,7 @@ public class EmployeeManager {
             }
         }
         employeeList.remove(empRemove);
-        Collections.sort(employeeList);
+        Collections.sort(employeeList); //sorts by surname
+
     }
 }

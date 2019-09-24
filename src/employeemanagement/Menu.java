@@ -11,9 +11,9 @@ public class Menu {
     EmployeeStats empStats = new EmployeeStats();
     EmployeeManager empMan = new EmployeeManager();
 
-    public void menu() throws InterruptedException {
+    public void menu() throws InterruptedException { //exception because of TimeUnits...
          ArrayList<Employee> employeeList = empMan.getEmployeeList();
-        boolean loopMenu = true;
+        boolean loopMenu = true; //To make sure list of employees is only loaded once
         boolean isListLoaded = false;
 
         do {
@@ -35,7 +35,7 @@ public class Menu {
                     if (isListLoaded == false) {
                         empMan.loadList();
                         isListLoaded = true;
-                        Collections.sort(EmployeeManager.employeeList);
+                        Collections.sort(EmployeeManager.employeeList); //sorts by surname
                     } else {
                         System.out.println("\nSorry, list can only be loaded once.\n");
                     }
