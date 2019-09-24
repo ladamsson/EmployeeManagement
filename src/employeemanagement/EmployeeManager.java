@@ -37,6 +37,8 @@ public class EmployeeManager {
         ShareHolderEmployee emp4 = new ShareHolderEmployee(7700, "Jessica Pearson", Gender.FEMALE, "1965-01-12");
         ContractorEmployee emp5 = new ContractorEmployee(5400, "Builder Bob", Gender.MALE, "1970-05-12");
         ShareHolderEmployee emp6 = new ShareHolderEmployee(15400, "Britt-Erik Svenssondotter", Gender.UNKNOWN, "1955-03-12");
+        FullTimeEmployee emp7 = new FullTimeEmployee(5400, "Marat Matourin", Gender.MALE, "1994-12-04");
+        ContractorEmployee emp8 = new ContractorEmployee(20120, "Caspar Sylwan", Gender.MALE, "1979-04-12");
 
         employeeList.add(emp);
         employeeList.add(emp1);
@@ -45,6 +47,9 @@ public class EmployeeManager {
         employeeList.add(emp4);
         employeeList.add(emp5);
         employeeList.add(emp6);
+        employeeList.add(emp7);
+        employeeList.add(emp8);
+        employeeList.add(new ShareHolderEmployee(17200, "Uffe B", Gender.MALE, "1955-04-08"));
 
         System.out.println("Loaded a list of " + employeeList.size() + " employees.\n");
 
