@@ -4,13 +4,14 @@ import java.time.LocalDate;
 import java.time.Year;
 import static java.time.temporal.ChronoUnit.YEARS;
 
-public abstract class Employee {
+public abstract class Employee implements Comparable<Employee>{
 
     private double salary;
     private String name;
     private String socialSecurityN;
     private LocalDate startDate;
     private LocalDate endDate =null;
+
 
     public LocalDate getEndDate() {
         return endDate;
@@ -57,7 +58,16 @@ public abstract class Employee {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+    
+    public String getFirstName(){
+        String[] x = name.split(" ");
+        return x[0];
+    }
 
+    public String getSurname(){
+        String[] x = name.split(" ");
+        return x[1];
+    }
     public int getEmployeeID() {
         return employeeID;
     }
@@ -80,15 +90,21 @@ public abstract class Employee {
     public abstract double getTotalMonthlyIncome();
     
     public abstract double getUnUsedVacationDaysAllowance();
+    
+     @Override
+    public int compareTo(Employee o) {
+     
+        return ((name.split(" "))[1]).compareTo(o.getSurname());
+    }
 
     @Override
     public String toString() {
          if(endDate == null){
-             return "ID " + employeeID + "/" + name + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
+             return "ID " + employeeID + "/" + getSurname() +", " + getFirstName()  + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
                 + ". Joined company in " + startDate;
         }
          else{
-             return "ID " + employeeID + "/" + name + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
+             return "ID " + employeeID + "/" +getSurname() +", " + getFirstName()  + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
                 + ". Joined company in " + startDate + ", left company in " + endDate;
          }
     }
