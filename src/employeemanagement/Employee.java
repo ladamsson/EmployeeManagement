@@ -94,7 +94,10 @@ public abstract class Employee implements Comparable<Employee>{
      @Override
     public int compareTo(Employee o) {
      
-        return ((name.split(" "))[1]).compareTo(o.getSurname());
+        return ((name.split(" "))[1]).compareTo(o.getSurname()); /*Splits name into a String array of a[0] first name
+        and [1] surname, chooses surname and compares it to the second surname with getSurname(), aka
+       gives the ability to sort a list by surnames...
+        */
     }
 
     @Override
