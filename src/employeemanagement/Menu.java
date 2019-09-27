@@ -135,7 +135,7 @@ public class Menu {
             case 1:
 
                 System.out.println("The average age of the employees is " + empStats.getAverageAgeOfEmployees());
-                break; 
+                break;
             case 2:
 
                 System.out.println("The average salary of the employees is : " + empStats.getAverageSalary());
@@ -170,13 +170,13 @@ public class Menu {
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
-                empMan.addEmployee(); //calls addEmployee from employeeManager
+                empMan.addEmployee();
                 break;
             case 2:
-                empMan.removeEmployee(); //calls removeEmploeye from employeeManager
+                empMan.removeEmployee();
                 break;
             case 3:
-                empMan.updateEmployee(); //calls updateEmployee from employeeManager
+                empMan.updateEmployee();
                 break;
             default:
                 System.out.println("Invalid option.");
