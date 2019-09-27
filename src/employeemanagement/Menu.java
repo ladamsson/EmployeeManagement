@@ -44,6 +44,7 @@ public class Menu {
                     if(employeeList.size()!=0){
                     TimeUnit.SECONDS.sleep((long)0.25);
                     loadListMenu();
+                    TimeUnit.SECONDS.sleep(1);
                     }
                     else
                         System.out.println("List is empty, load list or add employees");
