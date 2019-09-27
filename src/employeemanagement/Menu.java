@@ -12,7 +12,7 @@ public class Menu {
     EmployeeManager empMan = new EmployeeManager();
 
     public void menu() throws InterruptedException { //exception because of TimeUnits...
-         ArrayList<Employee> employeeList = empMan.getEmployeeList();
+        ArrayList<Employee> employeeList = empMan.getEmployeeList();
         boolean loopMenu = true; //To make sure list of employees is only loaded once
         boolean isListLoaded = false;
 
@@ -41,29 +41,29 @@ public class Menu {
                     }
                     break;
                 case 2:
-                    if(employeeList.size()!=0){
-                    TimeUnit.SECONDS.sleep((long)0.25);
-                    loadListMenu();
-                    TimeUnit.SECONDS.sleep(1);
-                    }
-                    else
+                    if (employeeList.size() != 0) {
+                        TimeUnit.SECONDS.sleep((long) 0.25);
+                        loadListMenu();
+                        TimeUnit.SECONDS.sleep(1);
+                    } else {
                         System.out.println("List is empty, load list or add employees");
-                    
+                    }
+
                     break;
                 case 3:
-                   if(employeeList.size()!=0){
-                    TimeUnit.SECONDS.sleep((long) 0.25);
-                    empMan.printEmployee();
-                   }
-                   else
+                    if (employeeList.size() != 0) {
+                        TimeUnit.SECONDS.sleep((long) 0.25);
+                        empMan.printEmployee();
+                    } else {
                         System.out.println("List is empty, load list or add employees");
+                    }
                     break;
                 case 4:
-                    if(employeeList.size()!=0){
-                    printStatsMenu();
-                    }
-                    else
+                    if (employeeList.size() != 0) {
+                        printStatsMenu();
+                    } else {
                         System.out.println("List is empty, load list or add employees");
+                    }
                     break;
                 case 5:
                     manageEmployeesMenu();
@@ -91,7 +91,7 @@ public class Menu {
         TimeUnit.SECONDS.sleep((long) 1.5);
         switch (choice) {
             case 1:
-                
+
                 empMan.printList();
                 TimeUnit.SECONDS.sleep((long) 2.5);
                 break;
@@ -121,7 +121,7 @@ public class Menu {
     }
 
     public void printStatsMenu() throws InterruptedException {
-       
+
         System.out.println("What statistic would you like to check?");
         System.out.println("1: Average age of the employees");
         System.out.println("2: Average salary of the employees");
@@ -136,7 +136,7 @@ public class Menu {
             case 1:
 
                 System.out.println("The average age of the employees is " + empStats.getAverageAgeOfEmployees());
-                break; 
+                break;
             case 2:
 
                 System.out.println("The average salary of the employees is : " + empStats.getAverageSalary());
@@ -162,6 +162,7 @@ public class Menu {
     }
 
     public void manageEmployeesMenu() {
+        ArrayList<Employee> employeeList = empMan.getEmployeeList();
         empMan.printList();
         System.out.println("");
         System.out.println("Do you want to:");
@@ -174,10 +175,18 @@ public class Menu {
                 empMan.addEmployee(); //calls addEmployee from employeeManager
                 break;
             case 2:
+                if(employeeList.size()!=0){
                 empMan.removeEmployee(); //calls removeEmploeye from employeeManager
+                }
+                else
+                    System.out.println("List is empty");
                 break;
             case 3:
+                if(employeeList.size()!=0){
                 empMan.updateEmployee(); //calls updateEmployee from employeeManager
+                }
+                else
+                    System.out.println("List is empty");
                 break;
             default:
                 System.out.println("Invalid option.");

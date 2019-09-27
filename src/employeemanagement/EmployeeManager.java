@@ -301,6 +301,7 @@ public class EmployeeManager {
         for (Employee emp : employeeList) {
             if (emp.getEmployeeID() == ID) {
                 empRemove = emp;
+                System.out.println("Removing " + emp);
             }
         }
         employeeList.remove(empRemove);
