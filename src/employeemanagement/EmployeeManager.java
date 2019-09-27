@@ -32,15 +32,25 @@ public class EmployeeManager {
 
     public void loadList() {
 
-        employeeList.add(new FullTimeEmployee(3012, "Lukas Adamsson", Gender.MALE, "1995-10-10"));
-        employeeList.add(new FullTimeEmployee(1200, "Kalle Blomqvist", Gender.MALE, "1984-04-09"));
-        employeeList.add(new ContractorEmployee(2500, "Sara Pettersson", Gender.FEMALE, "1982-12-24"));
-        employeeList.add(new ShareHolderEmployee(10500, "Harvey Specter", Gender.MALE, "1976-09-22"));
-        employeeList.add(new ShareHolderEmployee(7700, "Jessica Pearson", Gender.FEMALE, "1965-01-12"));
-        employeeList.add(new ContractorEmployee(5400, "Builder Bob", Gender.MALE, "1970-05-12"));
-        employeeList.add(new ShareHolderEmployee(15400, "Britt-Erik Svenssondotter", Gender.UNKNOWN, "1955-03-12"));
-        employeeList.add(new FullTimeEmployee(5400, "Marat Matourin", Gender.MALE, "1991-12-04"));
-        employeeList.add(new ContractorEmployee(20120, "Caspar Sylwan", Gender.MALE, "1979-04-12"));
+        FullTimeEmployee emp = new FullTimeEmployee(3012, "Lukas Adamsson", Gender.MALE, "1995-10-10");
+        FullTimeEmployee emp1 = new FullTimeEmployee(1200, "Kalle Blomqvist", Gender.MALE, "1984-04-09");
+        ContractorEmployee emp2 = new ContractorEmployee(2500, "Sara Pettersson", Gender.FEMALE, "1982-12-24");
+        ShareHolderEmployee emp3 = new ShareHolderEmployee(10500, "Harvey Specter", Gender.MALE, "1976-09-22");
+        ShareHolderEmployee emp4 = new ShareHolderEmployee(7700, "Jessica Pearson", Gender.FEMALE, "1965-01-12");
+        ContractorEmployee emp5 = new ContractorEmployee(5400, "Builder Bob", Gender.MALE, "1970-05-12");
+        ShareHolderEmployee emp6 = new ShareHolderEmployee(15400, "Britt-Erik Svenssondotter", Gender.UNKNOWN, "1955-03-12");
+        FullTimeEmployee emp7 = new FullTimeEmployee(5400, "Marat Matourin", Gender.MALE, "1991-12-04");
+        ContractorEmployee emp8 = new ContractorEmployee(20120, "Caspar Sylwan", Gender.MALE, "1979-04-12");
+
+        employeeList.add(emp);
+        employeeList.add(emp1);
+        employeeList.add(emp2);
+        employeeList.add(emp3);
+        employeeList.add(emp4);
+        employeeList.add(emp5);
+        employeeList.add(emp6);
+        employeeList.add(emp7);
+        employeeList.add(emp8);
         employeeList.add(new ShareHolderEmployee(17200, "Uffe B", Gender.MALE, "1955-04-08"));
         
        

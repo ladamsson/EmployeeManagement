@@ -32,12 +32,12 @@ public class EmployeeStats {
     }
 
     public void printAverageSalaryWithinProfessions() {
-        int amountOfShareHolders = 0;
-        int shareHoldersSalary = 0;
-        int amountOfFulltimes = 0;
-        int fullTimesSalary = 0;
-        int amountOfContractors = 0;
-        int contractorsSalary = 0;
+        double amountOfShareHolders = 0;
+        double shareHoldersSalary = 0;
+        double amountOfFulltimes = 0;
+        double fullTimesSalary = 0;
+        double amountOfContractors = 0;
+        double contractorsSalary = 0;
 
         for (Employee employee : employeeList) {
             if (employee instanceof ShareHolderEmployee) {
@@ -62,12 +62,12 @@ public class EmployeeStats {
     }
 
     public void printAverageSalaryBetweenGenders() {
-        int amountOfUnknowns = 0;
-        int amountOfMales = 0;
-        int amountOfFemales = 0;
-        int unknownsSalary = 0;
-        int malesSalary = 0;
-        int femalesSalary = 0;
+        double amountOfUnknowns = 0;
+        double amountOfMales = 0;
+        double amountOfFemales = 0;
+        double unknownsSalary = 0;
+        double malesSalary = 0;
+        double femalesSalary = 0;
 
         for (Employee employee : employeeList) {
             if (employee.getGender() == Gender.UNKNOWN) {
@@ -102,10 +102,10 @@ public class EmployeeStats {
 
     public void printGenderRatio() {
 
-        int females = 0;
-        int males = 0;
-        int unknown = 0;
-        int allEmployees = 0;
+        double females = 0;
+        double males = 0;
+        double unknown = 0;
+        double allEmployees = 0;
 
         if (employeeList.size() != 0) {
             for (Employee employee : employeeList) {
@@ -160,15 +160,15 @@ public class EmployeeStats {
         ArrayList<Employee> shareHolderList = new ArrayList<>();
         ArrayList<Employee> fullTimeList = new ArrayList<>();
         ArrayList<Employee> contractorList = new ArrayList<>();
-        int shareHolderMales = 0;
-        int shareHoldersFemales = 0;
-        int shareHoldersUnknowns = 0;
-        int fullTimeMales = 0;
-        int fullTimeFemales = 0;
-        int fullTimeUnknowns = 0;
-        int contractorsMales = 0;
-        int contractorsFemales = 0;
-        int contractorsUnknowns = 0;
+        double shareHolderMales = 0;
+        double shareHoldersFemales = 0;
+        double shareHoldersUnknowns = 0;
+        double fullTimeMales = 0;
+        double fullTimeFemales = 0;
+        double fullTimeUnknowns = 0;
+        double contractorsMales = 0;
+        double contractorsFemales = 0;
+        double contractorsUnknowns = 0;
 
         for (Employee employee : employeeList) {
             if (employee instanceof ShareHolderEmployee) {
