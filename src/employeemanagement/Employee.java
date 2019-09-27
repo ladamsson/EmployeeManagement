@@ -104,11 +104,11 @@ public abstract class Employee implements Comparable<Employee>{
     @Override
     public String toString() {
          if(endDate == null){ //if employee has not left company and endDate is not set this toString is used
-             return "ID " + employeeID + "/" + getSurname() +", " + getFirstName()  + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
+             return   getSurname() +", " + getFirstName()  + "/ID " + employeeID + "/"+ gender + "/" + socialSecurityN + "/Salary $" + salary 
                 + ". Joined company in " + startDate;
         }
          else{ // If employee has left company and endDate is set this toString is used with endDate included.
-             return "ID " + employeeID + "/" +getSurname() +", " + getFirstName()  + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
+             return getSurname() +", " + getFirstName()  + "/ID " + employeeID + "/" + gender + "/" + socialSecurityN + "/Salary $" + salary 
                 + ". Joined company in " + startDate + ", left company in " + endDate;
          }
     }

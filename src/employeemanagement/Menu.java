@@ -42,8 +42,9 @@ public class Menu {
                     break;
                 case 2:
                     if(employeeList.size()!=0){
-                    TimeUnit.SECONDS.sleep(1);
+                    TimeUnit.SECONDS.sleep((long)0.25);
                     loadListMenu();
+                    TimeUnit.SECONDS.sleep(1);
                     }
                     else
                         System.out.println("List is empty, load list or add employees");
@@ -161,6 +162,7 @@ public class Menu {
     }
 
     public void manageEmployeesMenu() {
+        ArrayList<Employee> employeeList = empMan.getEmployeeList();
         empMan.printList();
         System.out.println("");
         System.out.println("Do you want to:");
@@ -173,10 +175,17 @@ public class Menu {
                 empMan.addEmployee();
                 break;
             case 2:
+                if(employeeList.size()!=0){
                 empMan.removeEmployee();
+                }
+                else System.out.println("List is empty");
+                    
                 break;
             case 3:
+                if(employeeList.size()!=0){
                 empMan.updateEmployee();
+                }
+                else    System.out.println("List is empty");
                 break;
             default:
                 System.out.println("Invalid option.");
