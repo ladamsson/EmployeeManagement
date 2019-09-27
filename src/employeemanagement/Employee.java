@@ -11,6 +11,9 @@ public abstract class Employee implements Comparable<Employee>{
     private String socialSecurityN;
     private LocalDate startDate;
     private LocalDate endDate =null;
+    private Gender gender;
+    private static int counter = 1;
+    private int employeeID = counter;
 
 
     public LocalDate getEndDate() {
@@ -20,9 +23,7 @@ public abstract class Employee implements Comparable<Employee>{
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
-    private Gender gender;
-    private static int counter = 1;
-    private int employeeID = counter;
+ 
 
     public Employee(double salary, String name, Gender gender, String socialSecurityN) {
         this.salary = salary;
