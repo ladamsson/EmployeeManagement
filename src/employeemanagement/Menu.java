@@ -3,7 +3,7 @@ package employeemanagement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit; //to add some delays in the progrmar for fun/some kinda user friendlyness
+import java.util.concurrent.TimeUnit;
 
 public class Menu {
 
