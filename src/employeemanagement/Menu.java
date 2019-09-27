@@ -42,7 +42,7 @@ public class Menu {
                     break;
                 case 2:
                     if(employeeList.size()!=0){
-                    TimeUnit.SECONDS.sleep(1);
+                    TimeUnit.SECONDS.sleep((long)0.25);
                     loadListMenu();
                     }
                     else
